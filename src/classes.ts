@@ -12,7 +12,6 @@ export class Character {
 	}
 }
 
-
 export class King extends Character {
 	constructor(name: string, family: string, age: number, public reign: number) {
 		super(name, family, age);
@@ -23,8 +22,6 @@ export class King extends Character {
 		return 'Vais a morir todos';
 	}
 }
-
-
 
 export class Fighter extends Character {
 	constructor(
@@ -41,5 +38,40 @@ export class Fighter extends Character {
 
 	greetings(): string {
 		return 'Primero pego y luego pregunto';
+	}
+}
+
+export class Advisor extends Character {
+	constructor(
+		name: string,
+		family: string,
+		age: number,
+		public advising: string,
+	) {
+		super(name, family, age);
+		this.advising = advising;
+	}
+
+	greetings(): string {
+		return 'No sé por qué, pero creo que voy a morir pronto';
+	}
+}
+
+
+export class Squire extends Character {
+	serving;
+	constructor(
+		name: string,
+		family: string,
+		age: number,
+		public grade: number,
+	) {
+		super(name, family, age);
+		this.serving = 'fighter';
+		this.grade = grade;
+	}
+
+	greetings(): string {
+		return 'Soy un loser';
 	}
 }

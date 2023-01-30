@@ -1,4 +1,4 @@
-import {Character, King, Fighter} from './classes';
+import {Character, King, Fighter, Advisor, Squire} from './classes';
 
 describe('Given a class creator', () => {
 	describe('When you create a new <Character> with the arguments are "pepe", "baratheon", "12"', () => {
@@ -37,6 +37,33 @@ describe('Given a class creator', () => {
 
 		test('foo.skill() should be 10', () => {
 			expect(foo.skill).toBe(10);
+		});
+	});
+
+	describe('When you create a new <Advisor> with the arguments are "pepe", "baratheon", 12, "king"', () => {
+		const foo = new Advisor('pepe', 'baratheon', 12, 'king');
+		test('Then if foo.alive it should return true.', () => {
+			expect(foo.advising).toBe('king');
+		});
+		test('foo.greetings() should be "No sé por qué, pero creo que voy a morir pronto"', () => {
+			expect(foo.greetings()).toBe(
+				'No sé por qué, pero creo que voy a morir pronto',
+			);
+		});
+	});
+
+	describe('When you create a new <Squire> if the arguments are "pepe", "baratheon", 12, 2 ', () => {
+		const foo = new Squire('pepe', 'baratheon', 12, 8);
+		test('Then foo.serving should be "fighter".', () => {
+			expect(foo.serving).toBe('fighter');
+		});
+
+		test('foo.greetings() should be "Primero pego y luego pregunto"', () => {
+			expect(foo.greetings()).toBe('Soy un loser');
+		});
+
+		test('foo.weapon() should be "knife"', () => {
+			expect(foo.grade).toBe(8);
 		});
 	});
 });
