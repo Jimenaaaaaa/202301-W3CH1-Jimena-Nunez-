@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest --watchAll —coverage",
-    "test:prod": "jest —watchAll —coverage —watchAll=false",
+    "test": "jest --watchAll --coverage",
+    "test:prod": "jest --watchAll --coverage --watchAll=false",
     "start": "tsc -w",
     "dev": "vite",
     "build": "tsc && vite build",
@@ -28,5 +28,8 @@
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.4",
     "vite": "^4.0.0"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
