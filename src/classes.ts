@@ -29,7 +29,7 @@ export class Fighter extends Character {
 		family: string,
 		age: number,
 		public weapon: string,
-		public skill: number,
+		public skill: number
 	) {
 		super(name, family, age);
 		this.weapon = weapon;
@@ -46,7 +46,7 @@ export class Advisor extends Character {
 		name: string,
 		family: string,
 		age: number,
-		public advising: string,
+		public advising: string
 	) {
 		super(name, family, age);
 		this.advising = advising;
@@ -57,15 +57,9 @@ export class Advisor extends Character {
 	}
 }
 
-
 export class Squire extends Character {
 	serving;
-	constructor(
-		name: string,
-		family: string,
-		age: number,
-		public grade: number,
-	) {
+	constructor(name: string, family: string, age: number, public grade: number) {
 		super(name, family, age);
 		this.serving = 'fighter';
 		this.grade = grade;
